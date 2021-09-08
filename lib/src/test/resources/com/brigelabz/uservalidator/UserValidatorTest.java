@@ -134,4 +134,12 @@ public class UserValidatorTest {
 		Assert.assertFalse(isValid);
 
 	}
+	@Test
+	public void givenPassword_WhenMoreThanOneSpecialCharacters_ShouldReturnFalse()
+	{
+		UserValidator userValidator = new UserValidator();
+		boolean isValid=userValidator.validatePassword("Abc12345@@@");
+		Assert.assertFalse(isValid);
+
+	}
 }
