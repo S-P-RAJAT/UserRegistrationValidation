@@ -110,4 +110,12 @@ public class UserValidatorTest {
 		Assert.assertFalse(isValid);
 
 	}
+	@Test
+	public void givenPassword_WhenNoUpperCaseLetters_ShouldReturnFalse()
+	{
+		UserValidator userValidator = new UserValidator();
+		boolean isValid=userValidator.validatePassword("azaz3bc1@");
+		Assert.assertFalse(isValid);
+
+	}
 }
