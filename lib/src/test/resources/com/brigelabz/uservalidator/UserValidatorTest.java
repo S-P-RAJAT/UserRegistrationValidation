@@ -46,8 +46,17 @@ public class UserValidatorTest {
 	{
 
 		UserValidator userValidator = new UserValidator();
-		boolean isValid=userValidator.validateName("Em");
+		boolean isValid=userValidator.validateName("Wi");
 		Assert.assertFalse(isValid);
 
 	}
+	 @Test
+		public void givenLastName_WhenFirstLetterNotCapital_ShouldReturnFalse() 
+		{
+
+			UserValidator userValidator = new UserValidator();
+			boolean isValid=userValidator.validateName("wilson");
+			Assert.assertFalse(isValid);
+
+		}
 }
