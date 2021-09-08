@@ -94,4 +94,12 @@ public class UserValidatorTest {
 		Assert.assertFalse(isValid);
 
 	}
+	@Test
+	public void givenPassword_WhenValid_ShouldReturnTrue() 
+	{
+
+		UserValidator userValidator = new UserValidator();
+		boolean isValid=userValidator.validatePassword("Abc12@we3");
+		Assert.assertTrue(isValid);
+	}
 }
