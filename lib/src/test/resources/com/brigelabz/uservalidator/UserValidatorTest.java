@@ -23,4 +23,13 @@ public class UserValidatorTest {
 		Assert.assertFalse(isValid);
 
 	}
+    @Test
+	public void givenFirstName_WhenFirstLetterNotCapital_ShouldReturnFalse() 
+	{
+
+		UserValidator userValidator = new UserValidator();
+		boolean isValid=userValidator.validateName("emma");
+		Assert.assertFalse(isValid);
+
+	}
 }
