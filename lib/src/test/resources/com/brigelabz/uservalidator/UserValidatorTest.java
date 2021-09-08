@@ -118,4 +118,12 @@ public class UserValidatorTest {
 		Assert.assertFalse(isValid);
 
 	}
+	@Test
+	public void givenPassword_WhenNoNumbers_ShouldReturnFalse()
+	{
+		UserValidator userValidator = new UserValidator();
+		boolean isValid=userValidator.validatePassword("Abcdef@ghij");
+		Assert.assertFalse(isValid);
+
+	}
 }
