@@ -126,4 +126,12 @@ public class UserValidatorTest {
 		Assert.assertFalse(isValid);
 
 	}
+	@Test
+	public void givenPassword_WhenNoSpecialCharacters_ShouldReturnFalse()
+	{
+		UserValidator userValidator = new UserValidator();
+		boolean isValid=userValidator.validatePassword("Abc123456av");
+		Assert.assertFalse(isValid);
+
+	}
 }
