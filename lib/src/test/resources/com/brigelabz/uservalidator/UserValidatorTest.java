@@ -81,7 +81,30 @@ public class UserValidatorTest {
 		Assert.assertFalse(isValid);
 
 	}
+	@Test
+	public void givenLastName_Empty_ShouldReturnFalse() {
 
+		UserValidator userValidator = new UserValidator();
+		boolean isValid = userValidator.validateName("");
+		Assert.assertFalse(isValid);
+
+	}
+	@Test
+	public void givenLastName_WhenContainsSpecialCharacters_ShouldReturnFalse() {
+
+		UserValidator userValidator = new UserValidator();
+		boolean isValid = userValidator.validateName("Wilson@");
+		Assert.assertFalse(isValid);
+
+	}
+	@Test
+	public void givenLastName_WhenContainsNumbers_ShouldReturnFalse() {
+
+		UserValidator userValidator = new UserValidator();
+		boolean isValid = userValidator.validateName("Wilson123");
+		Assert.assertFalse(isValid);
+
+	}
 	@Test
 	public void givenEmail_WhenValid_ShouldReturnTrue() {
 
