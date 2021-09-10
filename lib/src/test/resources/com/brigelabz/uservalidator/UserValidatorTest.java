@@ -82,7 +82,7 @@ public class UserValidatorTest {
 
 	}
 	@Test
-	public void givenLastName_Empty_ShouldReturnFalse() {
+	public void givenLastName_WhenEmpty_ShouldReturnFalse() {
 
 		UserValidator userValidator = new UserValidator();
 		boolean isValid = userValidator.validateName("");
@@ -119,6 +119,14 @@ public class UserValidatorTest {
 
 		UserValidator userValidator = new UserValidator();
 		boolean isValid = userValidator.validateEMail("abcgmail.com");
+		Assert.assertFalse(isValid);
+
+	}
+	@Test
+	public void givenEmail_WhenEmpty_ShouldReturnFalse() {
+
+		UserValidator userValidator = new UserValidator();
+		boolean isValid = userValidator.validateEMail("");
 		Assert.assertFalse(isValid);
 
 	}
