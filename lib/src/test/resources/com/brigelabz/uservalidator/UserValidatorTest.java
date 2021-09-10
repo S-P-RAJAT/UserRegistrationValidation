@@ -31,7 +31,14 @@ public class UserValidatorTest {
 		Assert.assertFalse(isValid);
 
 	}
+	@Test
+	public void givenFirstName_Empty_ShouldReturnFalse() {
 
+		UserValidator userValidator = new UserValidator();
+		boolean isValid = userValidator.validateName("");
+		Assert.assertFalse(isValid);
+
+	}
 	@Test
 	public void givenLastName_WhenProper_ShouldReturnTrue() {
 
