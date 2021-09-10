@@ -40,6 +40,14 @@ public class UserValidatorTest {
 
 	}
 	@Test
+	public void givenFirstName_WhenContainsSpecialCharacters_ShouldReturnFalse() {
+
+		UserValidator userValidator = new UserValidator();
+		boolean isValid = userValidator.validateName("Hareesh@");
+		Assert.assertFalse(isValid);
+
+	}
+	@Test
 	public void givenLastName_WhenProper_ShouldReturnTrue() {
 
 		UserValidator userValidator = new UserValidator();
