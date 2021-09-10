@@ -9,6 +9,10 @@ public class UserValidator {
 
 	public boolean validateName(String name) throws UserValidatorException {
 		try {
+			if(name.length()==0) {
+				throw new UserValidatorException(UserValidatorException.ExceptionType.ENTERED_EMPTY,
+						"Please enter a valid name");
+			}
 			return name.matches(NAME_PATTERN);
 
 		} catch (NullPointerException e) {
@@ -19,6 +23,10 @@ public class UserValidator {
 
 	public boolean validateEMail(String email) throws UserValidatorException {
     	try {
+    		if(email.length()==0) {
+				throw new UserValidatorException(UserValidatorException.ExceptionType.ENTERED_EMPTY,
+						"Please enter a valid email");
+			}
         return email.matches(EMAIL_ID_PATTERN);
     	} catch (NullPointerException e) {
 			throw new UserValidatorException(UserValidatorException.ExceptionType.ENTERED_NULL,
@@ -28,6 +36,10 @@ public class UserValidator {
 
 	public boolean validateMobileNumber(String mobileNumber) throws UserValidatorException {
     	try {
+    		if(mobileNumber.length()==0) {
+				throw new UserValidatorException(UserValidatorException.ExceptionType.ENTERED_EMPTY,
+						"Please enter a valid mobile number");
+			}
 		return mobileNumber.matches(PHONE_NUMBER_PATTERN);
 	} catch (NullPointerException e) {
 		throw new UserValidatorException(UserValidatorException.ExceptionType.ENTERED_NULL,
@@ -37,6 +49,10 @@ public class UserValidator {
 
 	public boolean validatePassword(String password) throws UserValidatorException {
     	try {
+    		if(password.length()==0) {
+				throw new UserValidatorException(UserValidatorException.ExceptionType.ENTERED_EMPTY,
+						"Please enter a valid password");
+			}
 		return password.matches(PASSWORD_PATTERN);
 	} catch (NullPointerException e) {
 		throw new UserValidatorException(UserValidatorException.ExceptionType.ENTERED_NULL,

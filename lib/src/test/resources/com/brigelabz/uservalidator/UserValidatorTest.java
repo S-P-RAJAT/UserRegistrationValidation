@@ -57,11 +57,25 @@ public class UserValidatorTest {
 		try {
 			isValid = userValidator.validateName("");
 		} catch (UserValidatorException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Assert.assertEquals(UserValidatorException.ExceptionType.ENTERED_EMPTY, e.type);
 		}
 		Assert.assertFalse(isValid);
 
+	}
+	@Test
+	public void givenFirstName_WhenNull_ShouldThrowException() 
+	{
+
+		UserValidator userValidator = new UserValidator();
+		boolean isValid;
+		try 
+		{
+			
+			isValid = userValidator.validateName(null);
+			
+		} catch (UserValidatorException e) 
+		{
+			Assert.assertEquals(UserValidatorException.ExceptionType.ENTERED_NULL, e.type);		}
 	}
 	@Test
 	public void givenFirstName_WhenContainsSpecialCharacters_ShouldReturnFalse() {
@@ -144,10 +158,25 @@ public class UserValidatorTest {
 			isValid = userValidator.validateName("");
 		} catch (UserValidatorException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Assert.assertEquals(UserValidatorException.ExceptionType.ENTERED_EMPTY, e.type);
 		}
 		Assert.assertFalse(isValid);
 
+	}
+	@Test
+	public void givenLastName_WhenNull_ShouldThrowException() 
+	{
+
+		UserValidator userValidator = new UserValidator();
+		boolean isValid;
+		try 
+		{
+			
+			isValid = userValidator.validateName(null);
+			
+		} catch (UserValidatorException e) 
+		{
+			Assert.assertEquals(UserValidatorException.ExceptionType.ENTERED_NULL, e.type);		}
 	}
 	@Test
 	public void givenLastName_WhenContainsSpecialCharacters_ShouldReturnFalse() {
@@ -215,12 +244,26 @@ public class UserValidatorTest {
 			isValid = userValidator.validateEMail("");
 		} catch (UserValidatorException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Assert.assertEquals(UserValidatorException.ExceptionType.ENTERED_EMPTY, e.type);
 		}
 		Assert.assertFalse(isValid);
 
 	}
+	@Test
+	public void givenEmail_WhenNull_ShouldThrowException() 
+	{
 
+		UserValidator userValidator = new UserValidator();
+		boolean isValid;
+		try 
+		{
+			
+			isValid = userValidator.validateEMail(null);
+			
+		} catch (UserValidatorException e) 
+		{
+			Assert.assertEquals(UserValidatorException.ExceptionType.ENTERED_NULL, e.type);		}
+	}
 	@Test
 	public void givenPhoneNumber_WhenValid_ShouldReturnTrue() {
 
@@ -259,10 +302,25 @@ public class UserValidatorTest {
 			isValid = userValidator.validateMobileNumber("");
 		} catch (UserValidatorException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Assert.assertEquals(UserValidatorException.ExceptionType.ENTERED_EMPTY, e.type);
 		}
 		Assert.assertFalse(isValid);
 
+	}
+	@Test
+	public void givenPhoneNumber_WhenNull_ShouldThrowException() 
+	{
+
+		UserValidator userValidator = new UserValidator();
+		boolean isValid;
+		try 
+		{
+			
+			isValid = userValidator.validateMobileNumber(null);
+			
+		} catch (UserValidatorException e) 
+		{
+			Assert.assertEquals(UserValidatorException.ExceptionType.ENTERED_NULL, e.type);		}
 	}
 	@Test
 	public void givenPassword_WhenValid_ShouldReturnTrue() 
@@ -357,9 +415,24 @@ public class UserValidatorTest {
 			isValid = userValidator.validatePassword("");
 		} catch (UserValidatorException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Assert.assertEquals(UserValidatorException.ExceptionType.ENTERED_EMPTY, e.type);
 		}
 		Assert.assertFalse(isValid);
 
+	}
+	@Test
+	public void givenPassword_WhenNull_ShouldThrowException() 
+	{
+
+		UserValidator userValidator = new UserValidator();
+		boolean isValid;
+		try 
+		{
+			
+			isValid = userValidator.validatePassword(null);
+			
+		} catch (UserValidatorException e) 
+		{
+			Assert.assertEquals(UserValidatorException.ExceptionType.ENTERED_NULL, e.type);		}
 	}
 }
