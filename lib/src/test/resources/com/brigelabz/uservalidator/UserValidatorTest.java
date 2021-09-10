@@ -204,4 +204,12 @@ public class UserValidatorTest {
 		Assert.assertFalse(isValid);
 
 	}
+	@Test
+	public void givenPassword_WhenEmpty_ShouldReturnFalse()
+	{
+		UserValidator userValidator = new UserValidator();
+		boolean isValid=userValidator.validatePassword("");
+		Assert.assertFalse(isValid);
+
+	}
 }
