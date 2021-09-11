@@ -9,3 +9,5 @@ build
 .classpath
 *.class
 
+lib/bin/*
+
