@@ -55,13 +55,7 @@ public class ValidEmailsTest
 	public void givenEmailAsVariable_ShouldReturnAsPerTheParameteriszedResult() 
 	{
 		UserValidator userValidator = new UserValidator();
-		boolean result = false;
-		try {
-			result = userValidator.validateEMail(this.emailTotest);
-		} catch (UserValidatorException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		boolean result = userValidator.validateEMail(this.emailTotest);
 		Assert.assertEquals(this.expectedResult, result);
 	}
 
