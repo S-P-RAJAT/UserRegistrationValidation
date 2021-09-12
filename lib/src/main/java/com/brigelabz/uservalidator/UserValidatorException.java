@@ -1,6 +1,6 @@
 package com.brigelabz.uservalidator;
 
-public class UserValidatorException extends Exception{
+public class UserValidatorException extends RuntimeException{
 	
 	enum ExceptionType {
         ENTERED_NULL,
